@@ -12,8 +12,19 @@
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
   </p>
 
-  <button ion-button (click)="goToPage()" color="danger">
+  <button ion-button (click)="goToPage('Enviando parâmetros de uma página para outra')" color="danger">
     <ion-icon name="heart"></ion-icon>
     Ir para Hello Page
   </button>
+
+  <button ion-button (click)="goToAboutPage()" color="secondary">
+    <ion-icon name="heart"></ion-icon>
+    Sobre Nós
+  </button>
+
+  <button ion-button (click)="goToAboutPageAsRoot()" color="secondary">
+    <ion-icon name="heart"></ion-icon>
+    Sobre Nós - Como Root
+  </button>
+
 </ion-content>

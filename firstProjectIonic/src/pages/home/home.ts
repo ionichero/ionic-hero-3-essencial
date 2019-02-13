@@ -1,6 +1,7 @@
 import { HelloPage } from './../hello/hello';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { AboutPage } from '../about/about';
 
 @Component({
   selector: 'page-home',
@@ -12,7 +13,17 @@ export class HomePage {
 
   }
 
-  goToPage() {
-    this.navCtrl.push(HelloPage);
+  goToPage(message) {
+    this.navCtrl.push(HelloPage, {
+      'id': message
+    });
+  }
+
+  goToAboutPage(){
+    this.navCtrl.push(AboutPage);
+  }
+
+  goToAboutPageAsRoot() {
+    this.navCtrl.setRoot(AboutPage);
   }
 }
