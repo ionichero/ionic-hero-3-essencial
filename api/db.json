@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Dell Ispiron"
+    },
+    {
+      "id": 2,
+      "name": "Acer"
+    },
+    {
+      "id": 3,
+      "name": "Macbook Pro"
+    }
+  ],
+  "users": [
+    {
+      "first_name": "Nanderson Castro",
+      "id": 1
+    }
+  ]
+}
