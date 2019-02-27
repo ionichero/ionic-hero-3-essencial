@@ -27,4 +27,12 @@
     Sobre Nós - Como Root
   </button>
 
+  <h1>Http Products</h1>
+
+  <ion-list>
+    <button ion-item *ngFor="let product of products|async" (click)="goToSingle(product.id)">
+     {{product.name}}
+    </button>
+  </ion-list>
+
 </ion-content>
