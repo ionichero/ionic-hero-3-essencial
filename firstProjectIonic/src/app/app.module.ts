@@ -10,6 +10,9 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 import { HttpServiceProvider } from '../providers/http-service/http-service';
+import { FormsModule } from '@angular/forms';
+import { CreatePage } from '../pages/create/create';
+import { ToastProvider } from '../providers/toast/toast';
 
 
 @NgModule({
@@ -17,25 +20,29 @@ import { HttpServiceProvider } from '../providers/http-service/http-service';
     MyApp,
     HomePage,
     HelloPage,
-    AboutPage
+    AboutPage,
+    CreatePage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     HelloPage,
-    AboutPage
+    AboutPage,
+    CreatePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    HttpServiceProvider
+    HttpServiceProvider,
+    ToastProvider
   ]
 })
 export class AppModule {}

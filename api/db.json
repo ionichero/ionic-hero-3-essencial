@@ -1,16 +1,16 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Dell Ispiron"
-    },
-    {
       "id": 2,
       "name": "Acer"
     },
     {
       "id": 3,
       "name": "Macbook Pro"
+    },
+    {
+      "name": "Produto 10",
+      "id": 4
     }
   ],
   "users": [

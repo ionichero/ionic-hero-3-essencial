@@ -1,5 +1,5 @@
 <!--
-  Generated template for the HelloPage page.
+  Generated template for the CreatePage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,24 +7,20 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Atualizar Produto: {{product?.name}}</ion-title>
+    <ion-title>Criar Produto: {{name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
-  <ion-list>
+ <ion-list>
     <ion-item>
       <ion-label floating>Nome do Produto</ion-label>
       <ion-input type="text" [(ngModel)]="product.name"></ion-input>
     </ion-item>
     <ion-item>
-      <button ion-button color="primary" (click)="updateProduct()">Atualizar Produto</button>
-      <button ion-button color="danger" (click)="deleteProduct()">Remover Produto</button>
-
+      <button ion-button color="primary" (click)="createProduct()">Criar Produto</button>
     </ion-item>
-  </ion-list>
-
+ </ion-list>
 </ion-content>

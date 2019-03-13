@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { AboutPage } from '../about/about';
-import { HelloPage } from './../hello/hello';
 
 import { HttpServiceProvider } from './../../providers/http-service/http-service';
-import { Observable } from 'rxjs/Observable';
+
+import { AboutPage } from '../about/about';
+import { HelloPage } from './../hello/hello';
+import { CreatePage } from './../create/create';
 
 
 @Component({
@@ -44,5 +45,9 @@ export class HomePage implements OnInit {
     this.navCtrl.push(HelloPage, {
       'productId': productId
     });
+  }
+
+  goToCreatePage() {
+    this.navCtrl.push(CreatePage);
   }
 }
