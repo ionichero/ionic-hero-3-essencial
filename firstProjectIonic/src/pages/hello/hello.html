@@ -16,15 +16,15 @@
 <ion-content padding>
 
   <ion-list>
-    <ion-item>
-      <ion-label floating>Nome do Produto</ion-label>
-      <ion-input type="text" [(ngModel)]="product.name"></ion-input>
-    </ion-item>
-    <ion-item>
-      <button ion-button color="primary" (click)="updateProduct()">Atualizar Produto</button>
-      <button ion-button color="danger" (click)="deleteProduct()">Remover Produto</button>
-
-    </ion-item>
+   <form [formGroup]="productForm" (ngSubmit)="updateProduct()">
+      <ion-item>
+        <ion-label floating>Nome do Produto</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <button ion-button color="primary">Atualizar Produto</button>
+      </ion-item>
+   </form>
   </ion-list>
-
+  <button ion-button color="danger" (click)="deleteProduct()">Remover Produto</button>
 </ion-content>
