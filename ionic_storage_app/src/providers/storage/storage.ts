@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 
 import { Storage } from '@ionic/storage';
+import { Contact } from '../../model/contact';
+
 /*
   Generated class for the StorageProvider provider.
 
@@ -13,7 +15,7 @@ export class StorageProvider {
   constructor(public storage: Storage) {
   }
 
-  save(key, value) {
+  set(key, value: Contact) {
     this.storage.set(key, value);
   }
 
