@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { StorageProvider } from '../../providers/storage/storage';
 import { EditPage } from '../edit/edit';
+import { CreatePage } from '../create/create';
 
 @Component({
   selector: 'page-home',
@@ -26,4 +27,7 @@ export class HomePage {
     });
   }
 
+  goToCreatePage() {
+    this.navCtrl.push(CreatePage);
+  }
 }

@@ -32,4 +32,8 @@ export class EditPage {
     console.log('ionViewDidLoad EditPage');
   }
 
+  updateContact() {
+    this.storageProvider.update('contact', this.contact);
+  }
+
 }
