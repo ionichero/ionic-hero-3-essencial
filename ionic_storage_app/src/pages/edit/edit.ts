@@ -1,8 +1,10 @@
+import { HomePage } from './../home/home';
 import { Contact } from './../../model/contact';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { StorageProvider } from './../../providers/storage/storage';
+import { ToastProvider } from '../../providers/toast/toast';
 
 /**
  * Generated class for the EditPage page.
@@ -23,7 +25,8 @@ export class EditPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private storageProvider: StorageProvider) {
+    private storageProvider: StorageProvider,
+    private toastProvider: ToastProvider) {
       this.storageProvider.get(this.navParams.get('id'))
                           .then((contact) => this.contact = contact);
   }
@@ -32,8 +35,25 @@ export class EditPage {
     console.log('ionViewDidLoad EditPage');
   }
 
-  updateContact() {
-    this.storageProvider.update('contact', this.contact);
+  updateContact(key) {
+    this.storageProvider.update(key, this.contact)
+                        .then(() => {
+                          this.toastProvider.createToast('Contato atualizado com sucesso');
+                          this.navCtrl.setRoot(HomePage);
+                        })
+                        .catch((error) => {
+                          this.toastProvider.createToast(error);
+                        });
   }
 
+  removeContact(key) {
+    this.storageProvider.remove(key)
+                        .then(() => {
+                          this.toastProvider.createToast('Contato removido com sucesso');
+                          this.navCtrl.setRoot(HomePage);
+                        })
+                        .catch((error) => {
+                          this.toastProvider.createToast(error);
+                        });
+  }
 }

@@ -19,21 +19,36 @@ export class StorageProvider {
     let contacts: Contact[] = [];
 
     return this.storage.forEach(function(contact: Contact, key: string, i: number){
+      contact.id = key;
       contacts.push(contact);
     })
     .then(()  => Promise.resolve(contacts))
     .catch(() => Promise.reject('Erro ao recuperar dados do storage!'));
   }
 
-  set(key, value: Contact) {
-    this.storage.set(key, value);
+  set(key, value: Contact, isEdit: boolean = false) {
+
+    if(!isEdit) {
+      let id = new Date().getTime();
+      key = key + id;
+    }
+
+    return this.storage.set(key, value);
   }
 
   get(key) {
-    return this.storage.get(key);
+    return this.storage.get(key)
+                       .then((contact) => {
+                         contact.id = key;
+                         return Promise.resolve(contact);
+                       });
   }
 
   update(key, value: Contact) {
-    this.set(key, value);
+    return this.set(key, value, true);
+  }
+
+  remove(key) {
+    return this.storage.remove(key);
   }
 }

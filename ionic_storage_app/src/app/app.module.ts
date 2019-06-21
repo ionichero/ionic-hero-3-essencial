@@ -7,6 +7,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { IonicStorageModule } from '@ionic/storage';
 import { FormsModule } from '@angular/forms';
 
+import { ToastProvider } from '../providers/toast/toast';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { StorageProvider } from '../providers/storage/storage';
@@ -40,7 +42,8 @@ import { CreatePage } from '../pages/create/create';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    StorageProvider
+    StorageProvider,
+    ToastProvider
   ]
 })
 export class AppModule {}
